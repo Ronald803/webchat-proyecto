@@ -6,13 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebChat con socket.io</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
     <header>
         <h1>Web Chat con socket.io</h1>
     </header>
-
+    <main>
+        <div id="all-messages">
+        </div>
+        <div class="send-message">
+            <input type="text" id="message"></input>
+            <button 
+                type="button" 
+                id="send-message" 
+                class="btn secondary">
+                    Enviar
+            </button>
+        </div>
+    </main>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/scritp.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
