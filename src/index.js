@@ -1,5 +1,6 @@
 const express = require('express');
 const { createServer } = require('http');
+const realtimeServer = require('./realtimeServer')
 const path = require('path');
 
 const app = express();
@@ -13,9 +14,12 @@ app.set('views', path.join(__dirname,'views'))
 app.use( require('./routes') );
 
 //Public
-app.use(express.static(path.join(dirname,'public')))
+app.use(express.static(path.join(__dirname,'public')))
 
 // raise server
 httpServer.listen(app.get('port'),()=>{
     console.log("El servidor esta corriendo en el puerto", app.get('port'));
 });
+
+// to socket io
+realtimeServer(httpServer);
